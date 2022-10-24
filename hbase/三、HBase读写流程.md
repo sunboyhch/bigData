@@ -1,4 +1,10 @@
-读操作
+# 三、HBase读写流程
+
+**声明：本文根据网上资料整理的学习笔记，严禁商用**。
+
+
+
+**读操作**
 
 ![](assets/read.png)
 
@@ -14,7 +20,7 @@ HBase 上 RegionServer 的内存分为两个部分一部分作为 MemStore ，�
 如果 BlockCache 中也没有找到，再到 StoreFile(HFile) 上进行读取
 从 StoreFile 中读取到数据之后，不是直接把结果数据返回给客户端，而是把数据先写入到 BlockCache 中，目的是为了加快后续的查询;然后在返回结果给客户端。
 
-写操作
+**写操作**
 
 ![](assets/write.png)
 
